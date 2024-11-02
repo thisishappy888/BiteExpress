@@ -7,23 +7,21 @@ Bite Express
 {% block content %}
 <div class="max-w-[1180px] mx-auto flex justify-between">
     <div class="block">
-        <div class="w-[300px] bg-orange-50 rounded-3xl block">
-            <button class="w-[100%] h-[50px] bg-black rounded-t-3xl text-white">
-                Картошка
-            </button>
-            <button class="w-[100%] h-[50px] bg-black text-white">Картошка</button>
-            <button class="w-[100%] h-[50px] bg-black text-white">Картошка</button>
-            <button class="w-[100%] h-[50px] bg-black text-white">Картошка</button>
-            <button class="w-[100%] h-[50px] bg-black text-white">Картошка</button>
-            <button class="w-[100%] h-[50px] bg-black text-white">Картошка</button>
-            <button class="w-[100%] h-[50px] bg-black text-white">Картошка</button>
-            <button class="w-[100%] h-[50px] bg-black text-white">Картошка</button>
-            <button class="w-[100%] h-[50px] bg-black text-white">Картошка</button>
-            <button class="w-[100%] h-[50px] bg-black rounded-b-3xl text-white">Картошка</button>
+        <div class="w-[250px] bg-orange-50 text-white rounded-md block">
+            {%for i in categories%}
+                <button class="text-amber-950 font-extrabold w-[100%] p-3 flex items-center">
+                    <img src={{i.images}} width="50" height="50" alt="" >
+                    <h2 class="pl-2">{{i.name}}</h2>
+                </button>
+            {%endfor%}
         </div>
     </div>
     <div class="block">
-        <h1 class="font-bold text-amber-950 text-[55px]">Новинки</h1>
+            {%for i in category%}
+            <h1 class="font-bold text-amber-950 text-[55px]">
+                {{i.title}}
+            </h1>
+            {%endfor%}
         <div class="grid grid-cols-3 gap-4">
             <div class=" w-[250px] bg-orange-50 rounded-2xl">
                 <img class="w-[75%] mx-auto mt-2" src="https://orderapp-static.burgerkingrus.ru/x256/mobile_image/7d5a965ff6212dc44bc39fe635e32d47.webp" alt="">
